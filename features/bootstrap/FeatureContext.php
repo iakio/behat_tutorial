@@ -10,9 +10,9 @@ use Behat\Gherkin\Node\PyStringNode,
 //
 // Require 3rd-party libraries here:
 //
-//   require_once 'PHPUnit/Autoload.php';
-//   require_once 'PHPUnit/Framework/Assert/Functions.php';
-//
+require_once 'PHPUnit/Autoload.php';
+require_once 'PHPUnit/Framework/Assert/Functions.php';
+
 
 /**
  * Features context.
@@ -41,7 +41,13 @@ class FeatureContext extends BehatContext
         $suite4, $no4,
         $suite5, $no5)
     {
-        throw new PendingException();
+        $sut = new PorkerGame();
+        $sut->setUp(
+            Card::get($suite1, $no1),
+            Card::get($suite2, $no2),
+            Card::get($suite3, $no3),
+            Card::get($suite4, $no4),
+            Card::get($suite5, $no5));
     }
 
     /**
@@ -49,7 +55,7 @@ class FeatureContext extends BehatContext
      */
     public function チェンジしない()
     {
-        throw new PendingException();
+        $sut->noChange();
     }
 
     /**
@@ -57,7 +63,8 @@ class FeatureContext extends BehatContext
      */
     public function ノーペアである()
     {
-        throw new PendingException();
+        $result = $sut->pat();
+        assertThat($result, equalTo(Pat::NP_PAIR));
     }
 
 }
