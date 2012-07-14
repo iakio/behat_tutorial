@@ -32,25 +32,30 @@ class FeatureContext extends BehatContext
 
 
     /**
-     * @Given /^手札にS(\d+),H(\d+),D(\d+),D(\d+),C(\d+)が配られた$/
+     * @Given /^手札に([SHDC])(\d+),([SHDC])(\d+),([SHDC])(\d+),([SHDC])(\d+),([SHDC])(\d+)が配られた$/
      */
-    public function sHDDCKuai($arg1, $arg2, $arg3, $arg4, $arg5)
+    public function 手札にカードが配られた(
+        $suite1, $no1,
+        $suite2, $no2,
+        $suite3, $no3,
+        $suite4, $no4,
+        $suite5, $no5)
     {
         throw new PendingException();
     }
 
     /**
-     * @Given /^チェンジしない$/
+     * @When /^チェンジしない$/
      */
-    public function stepDefinition1()
+    public function チェンジしない()
     {
         throw new PendingException();
     }
 
     /**
-     * @Given /^ノーペアである$/
+     * @Then /^ノーペアである$/
      */
-    public function stepDefinition2()
+    public function ノーペアである()
     {
         throw new PendingException();
     }
