@@ -30,15 +30,29 @@ class FeatureContext extends BehatContext
         // Initialize your context here
     }
 
-//
-// Place your definition and hook methods here:
-//
-//    /**
-//     * @Given /^I have done something with "([^"]*)"$/
-//     */
-//    public function iHaveDoneSomethingWith($argument)
-//    {
-//        doSomethingWith($argument);
-//    }
-//
+
+    /**
+     * @Given /^手札にS(\d+),H(\d+),D(\d+),D(\d+),C(\d+)が配られた$/
+     */
+    public function sHDDCKuai($arg1, $arg2, $arg3, $arg4, $arg5)
+    {
+        throw new PendingException();
+    }
+
+    /**
+     * @Given /^チェンジしない$/
+     */
+    public function stepDefinition1()
+    {
+        throw new PendingException();
+    }
+
+    /**
+     * @Given /^ノーペアである$/
+     */
+    public function stepDefinition2()
+    {
+        throw new PendingException();
+    }
+
 }
