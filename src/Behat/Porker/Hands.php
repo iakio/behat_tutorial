@@ -6,7 +6,7 @@ class Hands implements \IteratorAggregate
     const SIZE = 5;
     private $hands;
 
-    public function __construct($cards)
+    public function __construct(array $cards)
     {
         if (count($cards) !== self::SIZE) {
             throw new \InvalidArgumentException("card size is " . count($cards));

@@ -16,6 +16,7 @@ class PorkerGame
             throw new \BadMethodCallException();
         }
 
+        // コンストラクタはcall_user_funcで呼べればなあ
         $this->hands = new Hands(func_get_args());
         $this->status = self::STATUS_READY;
     }

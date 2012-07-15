@@ -73,7 +73,7 @@ class FeatureContext extends BehatContext
     }
 
     /**
-     * @Given /^(\d+)のワンペアであるべき$/
+     * @Then /^(\d+)のワンペアであるべき$/
      */
     public function ワンペアであるべき($no)
     {
