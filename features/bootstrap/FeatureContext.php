@@ -13,6 +13,11 @@ use Behat\Gherkin\Node\PyStringNode,
 require_once 'PHPUnit/Autoload.php';
 require_once 'PHPUnit/Framework/Assert/Functions.php';
 
+require_once __DIR__ . '/../../vendor/autoload.php';
+use Behat\Porker\PorkerGame,
+    Behat\Porker\Card,
+    Behat\Porker\Hands,
+    Behat\Porker\Pat;
 
 /**
  * Features context.
@@ -41,8 +46,8 @@ class FeatureContext extends BehatContext
         $suite4, $no4,
         $suite5, $no5)
     {
-        $sut = new PorkerGame();
-        $sut->setUp(
+        $this->sut = new PorkerGame();
+        $this->sut->setUp(
             Card::get($suite1, $no1),
             Card::get($suite2, $no2),
             Card::get($suite3, $no3),
@@ -55,7 +60,7 @@ class FeatureContext extends BehatContext
      */
     public function チェンジしない()
     {
-        $sut->noChange();
+        $this->sut->noChange();
     }
 
     /**
@@ -63,8 +68,8 @@ class FeatureContext extends BehatContext
      */
     public function ノーペアである()
     {
-        $result = $sut->pat();
-        assertThat($result, equalTo(Pat::NP_PAIR));
+        $result = $this->sut->pat();
+        assertThat($result, equalTo(new Pat\NoPair));
     }
 
 }
