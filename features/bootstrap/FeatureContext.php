@@ -75,8 +75,9 @@ class FeatureContext extends BehatContext
     /**
      * @Given /^(\d+)のワンペアであるべき$/
      */
-    public function o($arg1)
+    public function ワンペアであるべき($no)
     {
-        throw new PendingException();
+        $expected = new Pat\OnePair($no);
+        assertThat($this->sut->pat(), equalTo($expected));
     }
 }
