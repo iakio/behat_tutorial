@@ -72,4 +72,11 @@ class FeatureContext extends BehatContext
         assertThat($result, equalTo(new Pat\NoPair));
     }
 
+    /**
+     * @Given /^(\d+)のワンペアであるべき$/
+     */
+    public function o($arg1)
+    {
+        throw new PendingException();
+    }
 }
