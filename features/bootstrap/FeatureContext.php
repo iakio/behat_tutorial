@@ -64,9 +64,9 @@ class FeatureContext extends BehatContext
     }
 
     /**
-     * @Then /^ノーペアである$/
+     * @Then /^ノーペアであるべき$/
      */
-    public function ノーペアである()
+    public function ノーペアであるべき()
     {
         $result = $this->sut->pat();
         assertThat($result, equalTo(new Pat\NoPair));
